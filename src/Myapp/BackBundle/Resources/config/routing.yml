@@ -1,0 +1,11 @@
+back_admin Articles:
+    resource: "@BackBundle/Resources/config/routing/article.yml"
+    prefix:   /admin Articles
+
+back_homepage:
+    path:     /
+    defaults: { _controller: BackBundle:Default:index }
+   
+layout_admin:
+    path:     /layoutadmin
+    defaults: { _controller: BackBundle:Default:layoutadmin }    

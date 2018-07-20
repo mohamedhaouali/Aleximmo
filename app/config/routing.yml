@@ -1,0 +1,12 @@
+gestion_projet:
+    resource: "@GestionProjetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+back:
+    resource: "@BackBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+article:
+    resource: "@BackBundle/Resources/config/routing/article.yml"
+    prefix:   /admin/article
