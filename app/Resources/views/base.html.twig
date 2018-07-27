@@ -1,23 +1,13 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
 
-<html class="no-js"> <!--<![endif]-->
+<html> 
     <head>
+      <meta charset="UTF-8" />
+        <title>{% block title %}Aleximmo{% endblock %}</title>
 
-        <title>Aleximmo</title>
-
-        <!-- meta -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        
         <!-- stylesheets -->
         {% block stylesheets %}
-        <link  href="{{asset('template1/css/bootstrap1.min.css')}}" rel="stylesheet">
+        <link  href="{{asset('template1/css/bootstrap.min.css')}}" rel="stylesheet">
         <link  href="{{asset('template1/css/font-awesome.min.css')}}" rel="stylesheet">
         <link  href="{{asset('template1/css/animate.css')}}" rel="stylesheet">
         <link  href="{{asset('template1/css/owl.carousel.css')}}" rel="stylesheet">
@@ -33,12 +23,10 @@
         
 
     </head>
-{% block content %}
+
     <body>
 
        
-        
-        
         <!-- Primary Page Layout
 	================================================== -->
 
@@ -179,16 +167,10 @@
         </script>
         
         
-        
-        
-        
-        
-        
-        
-        
+ 
         
 {% endblock %}
     </body>
-    {%endblock content %}
+    
 </html>
 

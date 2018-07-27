@@ -2,7 +2,27 @@
 {% extends '::base.html.twig'%}
 
 {% block body %}
-   
+ 
+     <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->   
+  
+
+    <html class="no-js"> <!--<![endif]-->
+        <head>
+
+            <title>Aleximmo</title>
+
+            <!-- meta -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+        </head>
+    
   <div id="home-page">
 
                     <!-- site-navigation start -->  
@@ -11,7 +31,12 @@
                         <div class="container">
                             
                                      <div class="navbar-header">
-                 
+                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
                         
                         <!-- navbar logo -->
                         <div class="navbar-brand">
@@ -120,103 +145,103 @@
 </div> 
   
 
-    <footer>
-        <div class="container">
-            <div class="row">
+ 
+                <footer>
+                    <div class="container">
+                        <div class="row">
 
-                <!-- useful links -->
-                <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
-                    <h4>Liens</h4>
-                    <ul class="row footer-links">
-                        <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <li><a href="{{path('acceuil')}}">Acceuil</a></li>
-                                    <li><a href="{{path('about')}}">A propos</a></li>
-                                    <li><a href="{{path('admin Articles_index')}}">Nos travaux</a></li>
+                            <!-- useful links -->
+                            <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
+                                <h4>Liens</h4>
+                                <ul class="row footer-links">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+
+                                        <li><a href="{{path('acceuil')}}">Acceuil</a></li>
+                                        <li><a href="{{path('about')}}">A propos</a></li>
+                                        <li><a href="{{path('admin Articles_index')}}">Nos travaux</a></li>   
+                                    </div>
+
+
+                                </ul>
+                            </div>
+
+                            <!-- recent news -->
+                            <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
+                                <h4>Aleximmo</h4>
+
+                                <div class="row footer-news">
+
+                                    <div class="col-md-8 col-sm-4 col-xs-6">
+                                        <div class="row">
+                                            <p class="text-capitalize">
+
+                                                Adresse :App .9.Immeuble EL Hakim Av.Paris-Ben Arous 2013
+
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div> <!-- /.footer-news -->
+
+
+                            </div> <!-- /.footer-widget -->
+
+                            <!-- news-letter -->
+
+
+                            <!-- about avada agency -->
+                            <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
+                                <h4>Tel</h4>
+
+                                <p>
+                                    +216 79 391 088
+                                </p>
+
+                    
+                            </div> <!-- /.footer-widget -->
+                            
+                   <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
                            
+
+                                <h4>Fax</h4>
+
+                                <p>
+                                    +216 79 391 056
+                                </p>
+
+
+
+
+                            </div> <!-- /.footer-widget -->
+
                         </div>
-
-
-                    </ul>
-                </div>
-
-                <!-- recent news -->
-
-
-                <!-- news-letter -->
-
-
-                <!-- about avada agency -->
-                <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
-                    <h4>ALEXIMMO </h4>
-
-
-
-                    <div class="footer-address">
-                        <p>
-                            Adresse <br>
-                            App .9.Immeuble EL Hakim Av.Paris-Ben Arous 2013
-                            <br>
-
-
-
                     </div>
+                </footer>
 
 
-                </div> <!-- /.footer-widget -->
+                <!-- footer-navigation start -->  
+                <nav class="hidden-xs hidden-sm navbar footer-nav" role="navigation">
+                    <div class="container">
 
-        
+                        <div class="navbar-header">
 
-                <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
+                            <!-- navbar logo -->
+                            <div class="navbar-brand">
+                                <span class="sr-only">2018 All Rights Reserved. Designed by Aleximmo</span>
+                                <a href="#">
+                                    2018 All Rights Reserved. Designed by Aleximmo
+                                </a>
+                            </div>
+                            <!-- navbar logo -->
 
+                        </div><!-- /.navbar-header -->
 
-
-
-                    <div class="footer-address">
-
-
-                        <p> Tél 
-                            <br>  
-                          
-                            (+216) 79 391 088 
-                        </p>
-                        <p>   Fax
-
-                            +216 79 391 056
+                        <!-- nav links -->
 
 
-                        </p>
-
-                    </div>
-
-
-                </div> 
-
-
-            </div>
-
-            <nav class="hidden-xs hidden-sm navbar footer-nav" role="navigation">
-                <div class="container">
-
-                    <div class="navbar-header">
-
-                        <!-- navbar logo -->
-                        <div class="navbar-brand">
-
-                            <a href="#">
-                                @2018 All Rights Reserved. Designed by ALEXIMMO
-                            </a>
-                        </div>
-                        <!-- navbar logo -->
-
-                    </div><!-- /.navbar-header -->
-
-                    <!-- nav links -->
-
-                </div><!-- /.container -->
-            </nav>
-
-        </div>
-    </footer>
+                    </div><!-- /.container -->
+                </nav>
+                <!-- footer-navigation end -->   
 
 
 </div> <!-- end of /#home-page -->
