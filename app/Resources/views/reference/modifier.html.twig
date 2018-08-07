@@ -4,12 +4,12 @@
     <div class="row">
 
         <div class="col-md-3">
-            <p class="lead">Listes Des Articles</p>
+            <p class="lead">Listes Des References</p>
             <div class="list-group">
-                <a href="{{path('admin Articles_new')}}"class="list-group-item">Ajouter</a>
-                <a href="{{path('admin Articles_modifier')}}" class="list-group-item">Modifier</a>
-                <a href="{{path('admin Articles_index')}}" class="list-group-item">Afficher</a>
-                <a href="{{path('admin Articles_recherche')}}" class="list-group-item">Recherche</a>
+                <a href="{{path('admin Reference_new')}}"class="list-group-item">Ajouter</a>
+                <a href="{{path('admin Reference_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('admin Reference_index')}}" class="list-group-item">Afficher</a>
+                <a href="{{path('admin Reference_recherche')}}" class="list-group-item">Recherche</a>
 
             </div>
         </div>
@@ -20,24 +20,22 @@
                     <tr>
                         <th>Id</th>
                         <th>Titre</th>
-                        <th>Description</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for article in articles %}
+                    {% for reference in references %}
                         <tr>
 
 
-                            <td><a href="{{ path('admin Articles_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
-                            <td>{{ article.titre }}</td>
-                            <td>{{ article.description }}</td>
-
+                            <td><a href="{{ path('admin Reference_show', { 'id': reference.id }) }}">{{ reference.id }}</a></td>
+                            <td>{{ reference.titre }}</td>
+                           
 
                             <td>
                                 <ul>
                                     <li>
-                                        <a href="{{ path('admin Articles_edit', { 'id': article.id})}}" class="btn btn-info" ><span class="glyphicon glyphicon-edit"></span> modifier</a>
+                                        <a href="{{ path('admin Reference_edit', { 'id': reference.id})}}" class="btn btn-info" ><span class="glyphicon glyphicon-edit"></span> modifier</a>
                                     </li>
                                
                                     
@@ -47,6 +45,7 @@
                     {% endfor %}
                 </tbody>
             </table>
+
 
 
         </div>    

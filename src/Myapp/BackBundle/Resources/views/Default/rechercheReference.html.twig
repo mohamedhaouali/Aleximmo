@@ -1,17 +1,17 @@
 {% extends '::base.html.twig'%}
 
 {% block body %}
-
-    <!DOCTYPE html>
+    
+       <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-    
-    
-    <html class="no-js"> <!--<![endif]-->
-        <head>
+<!--[if gt IE 8]><!-->    
 
+
+     <html class="no-js"> <!--<![endif]-->
+    <head>
+       
             <title>Aleximmo</title>
 
             <!-- meta -->
@@ -19,41 +19,28 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    </head> 
 
-        </head>
+      <div id="home-page">
 
-        <body>
-            
-             <div id="home-page">
-                    
-                            <!-- site-navigation start -->  
-            <nav id="mainNavigation" class="navbar navbar-dafault main-navigation" role="navigation">
-                <div class="container">
-                    
-                    <div class="navbar-header">
-                        
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse">
+                    <!-- site-navigation start -->  
+                    <nav id="mainNavigation" class="navbar navbar-dafault main-navigation" role="navigation">
+    
+    <div class="container">
+        
+        
+                                     <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        
-                       
-
-                    </div><!-- /.navbar-header -->
-                 
-                 
-                 
-                    <!-- site-navigation start -->  
-                    <nav id="mainNavigation" class="navbar navbar-dafault main-navigation" role="navigation">
-
-                        <div class="container">
-                            
-                                     <div class="navbar-header">
-                 
-                        
-                        <!-- navbar logo -->
+        <div class="row">   
+            <div class="animsition"> 
+                <br>
+                
+                         <!-- navbar logo -->
                         <div class="navbar-brand">
                             <span class="sr-only">ALEXIMMO</span>
                            
@@ -65,11 +52,12 @@
 
                     </div><!-- /.navbar-header -->
                             
-                    <br>      
-
-
-                            <!-- nav links -->
-                            <div class="collapse navbar-collapse" id="main-nav-collapse">
+                    <br>  
+                    <br>
+                    <br>
+                   
+                
+                 <div class="collapse navbar-collapse" id="main-nav-collapse">
                                 <ul class="nav navbar-nav navbar-right text-uppercase">
                                     <li>
                                         <a href={{path('acceuil')}}><span>Acceuil</span></a>
@@ -91,89 +79,68 @@
                                         <a href={{path('admin Articles_index')}}><span>Nos travaux</span></a>
                                     </li>
 
-                                   <li>
-                                        <a href={{path('admin Reference_index')}}><span>Nos References</span></a>
-                                    </li>
-                                    
+
                                 </ul>
                             </div><!-- nav links -->
 
                         </div><!-- /.container -->
-                        <br>
-                      
+                <form method="POST">
 
+                    titre <input type="text" name="titre">
+
+                    <input type="submit" name="sumbit" class="btn btn-info" value="recherche">
+
+
+
+                </form> 
+                
+                
+                
+                <div>     
+                   {% for reference in references %}
+                        <reference><br>
+                            <br>
+                            <dl class="dl-vertical" >
+
+                                <br>
+
+
+
+
+                                <dt><p class="text-left"><strong>{{ reference.titre|upper }}</strong></p><br></dt>
+
+
+                                <br>
+
+                                <p class="text-justify"><img src="{{asset('uploads/'~reference.path)}}" alt=""><br></p>
+                                <br> 
+
+
+                              
+
+
+                            </dl>       
+
+
+                        </article>
+
+
+
+
+
+
+                    {% endfor %}
                 </div>
-          
-            </nav>
-            <div id="about-page">
-
-
-                <div class="main-content">
-
-                    <!-- begin our story section -->
-
-                    <section class="bg-white story">
-                        <div class="container">
-                            <div class="headline text-center">
-                                <div class="row">
-                                    <div class="col-md-6 col-md-offset-3">
-                                        <h2 class="section-title">Presentation</h2>
-                                    </div>
-                                </div>
-                            </div> <!-- /.headline -->
-
-                            <div class="row">
-                                <div class="col-md-10 col-md-offset-1 text-center">
-                                    <p class="story-description">
-
-                                        Nous disposons d’une palette des produits qui comprend les revêtements dans le domaine des sols sportifs intérieurs et extérieurs, industriels et décoratifs ainsi que des aires de jeux, des pistes cyclables et de courses. Nous en disposons du stock mais en général la livraison se fait après une commande officielle. <br>
-
-
-                                        ALEXIMMO en tant que spécialiste du revêtement est un partenaire capable de vous accompagner dans la réalisation de vos projets. Nous ne faisons pas  l’application, nous pouvons disposer d’un surveillant technique et  de tout support nécessaire. Nous pourrions aussi vous envoyer des échantillons et des brochures à consulter.<br> 
-
-                                        Nous restons bien entendu à votre disposition pour vous apporter tout éclaircissement complémentaire. <br>
-
-                                        En espérant avoir prochainement l'occasion de vous rencontrer, recevez, nos salutations les meilleures.<br>
-
-                                        <strong> Notre structure </strong><br>
-
-                                        un siege social <br>
-
-                                        un entrepot de stockage <br>
-
-                                        Moyens de transport <br>
-
-                                        <strong> Equipements de travaux public <br></strong>
-
-                                        Niveleuse <br>
-
-                                        Tractopelle <br>
-
-                                        Cylindre <br>
-
-                                        Machine d'entretien sable et granulat  <br>
 
 
 
+            </div>
+        </div>
+    </div>     
+</div>   
 
 
-                                        LA DIRECTION
-
-                                    </p> <!-- /.story-description -->
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-
-
-
-
-
-                </div> 
-
-
-                <footer>
+        <footer>
                     <div class="container">
                         <div class="row">
 
@@ -186,7 +153,6 @@
                                         <li><a href="{{path('acceuil')}}">Acceuil</a></li>
                                         <li><a href="{{path('about')}}">A propos</a></li>
                                         <li><a href="{{path('admin Articles_index')}}">Nos travaux</a></li>   
-                                        <li><a href="{{path('admin Reference_index')}}">Nos References</a></li> 
                                     </div>
 
 
@@ -269,21 +235,17 @@
 
                     </div><!-- /.container -->
                 </nav>
-                <!-- footer-navigation end -->
-
-            </div> <!-- end of /#home-page -->
-
-            <!--  Necessary scripts  -->
-           
-        </body>
-
-    </html>
+                <!-- footer-navigation end -->   
 
 
-</div>
+
+{%endblock  %} 
 
 
-</body>
-</html>
 
-{%endblock  %}
+
+
+
+
+
+

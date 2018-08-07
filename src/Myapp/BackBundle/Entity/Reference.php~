@@ -6,13 +6,15 @@ use Doctrine\ORM\Mapping as ORM;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+
 /**
- * Article
+ * Reference
  *
- * @ORM\Table(name="article")
- * @ORM\Entity(repositoryClass="Myapp\BackBundle\Repository\ArticleRepository")
+ * @ORM\Table(name="reference")
+ * @ORM\Entity(repositoryClass="Myapp\BackBundle\Repository\ReferenceRepository")
  */
-class Article
+class Reference
 {
     /**
      * @var int
@@ -29,15 +31,7 @@ class Article
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="text", length=255)
-     */
-    private $description;
-        
-    
+      
      /**
      * @Assert\File(maxSize="6000000")
      */
@@ -112,7 +106,7 @@ class Article
      *
      * @param string $titre
      *
-     * @return Article
+     * @return Reference
      */
     public function setTitre($titre)
     {
@@ -130,31 +124,7 @@ class Article
     {
         return $this->titre;
     }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Article
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-      public function upload()
+          public function upload()
 {
     // the file property can be empty if the field is not required
     if (null === $this->getFile()) {

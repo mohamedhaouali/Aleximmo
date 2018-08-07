@@ -1,0 +1,32 @@
+admin Reference_index:
+    path:     /
+    defaults: { _controller: "BackBundle:Reference:index" }
+    methods:  GET
+
+admin Reference_show:
+    path:     /{id}/show
+    defaults: { _controller: "BackBundle:Reference:show" }
+    methods:  GET
+
+admin Reference_new:
+    path:     /new
+    defaults: { _controller: "BackBundle:Reference:new" }
+    methods:  [GET, POST]
+
+admin Reference_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BackBundle:Reference:edit" }
+    methods:  [GET, POST]
+
+admin Reference_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BackBundle:Reference:delete" }
+    methods:  DELETE
+
+admin Reference_modifier:
+    path:     /modifier
+    defaults: { _controller: "BackBundle:Reference:modifier" }
+    
+admin Reference_recherche:
+    path:     /recherche
+    defaults: { _controller: "BackBundle:Reference:recherche" }     

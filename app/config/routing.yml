@@ -10,3 +10,7 @@ back:
 article:
     resource: "@BackBundle/Resources/config/routing/article.yml"
     prefix:   /admin/article
+    
+reference:
+    resource: "@BackBundle/Resources/config/routing/reference.yml"
+    prefix:   /admin/reference  

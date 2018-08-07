@@ -13,31 +13,27 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  * Article controller.
  *
  */
-class ArticleController extends Controller
-{
+class ArticleController extends Controller {
+
     /**
      * Lists all article entities.
      *
      */
-    public function indexAction(Request $request)
-    {
+    public function indexAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
 
         $articles = $em->getRepository('BackBundle:Article')->findAll();
-        
-        $paginator  = $this->get('knp_paginator');
+
+        $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-        $articles,
-                
-        $request->query->get('page', 1)/*page number*/,
-        5/*limit per page*/
-    );
+                $articles, $request->query->get('page', 1)/* page number */, 5/* limit per page */
+        );
 
         return $this->render('article/index.html.twig', array(
-            'articles' => $articles,'articles' => $pagination
+                    'articles' => $articles, 'articles' => $pagination
         ));
     }
-    
+
     public function modifierAction() {
         $em = $this->getDoctrine()->getManager();
 
@@ -47,20 +43,20 @@ class ArticleController extends Controller
                     'articles' => $articles,
         ));
     }
+
     /**
      * Creates a new article entity.
      *
      */
-    public function newAction(Request $request)
-    {
+    public function newAction(Request $request) {
         $article = new Article();
         $form = $this->createForm('Myapp\BackBundle\Form\ArticleType', $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-             $article->upload();
-            
+            $article->upload();
+
             $em->persist($article);
             $em->flush();
 
@@ -68,8 +64,8 @@ class ArticleController extends Controller
         }
 
         return $this->render('article/new.html.twig', array(
-            'article' => $article,
-            'form' => $form->createView(),
+                    'article' => $article,
+                    'form' => $form->createView(),
         ));
     }
 
@@ -77,13 +73,12 @@ class ArticleController extends Controller
      * Finds and displays a article entity.
      *
      */
-    public function showAction(Article $article)
-    {
+    public function showAction(Article $article) {
         $deleteForm = $this->createDeleteForm($article);
 
         return $this->render('article/show.html.twig', array(
-            'article' => $article,
-            'delete_form' => $deleteForm->createView(),
+                    'article' => $article,
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -91,57 +86,49 @@ class ArticleController extends Controller
      * Displays a form to edit an existing article entity.
      *
      */
-   
-
-      public function editAction(Request $request, Article $article)
-    {
+    public function editAction(Request $request, Article $article) {
         $deleteForm = $this->createDeleteForm($article);
         $editForm = $this->createForm('Myapp\BackBundle\Form\ArticleType', $article);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-           $em =  $this->getDoctrine()->getManager();
-            
-        $article->upload();
-        
-        $em->persist($article);
-         
-        $em->flush();
+            $em = $this->getDoctrine()->getManager();
+
+            $article->upload();
+
+            $em->persist($article);
+
+            $em->flush();
 
             return $this->redirectToRoute('admin Articles_edit', array('id' => $article->getId()));
         }
 
         return $this->render('article/edit.html.twig', array(
-            'article' => $article,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'article' => $article,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
-    }  
-    
-    
-    
+    }
+
     /**
      * Deletes a article entity.
      *
      */
-  
-        public function deleteAction($id)
-    {
-        
+    public function deleteAction($id) {
+
         $cox = $this->getDoctrine()->getManager();
         $article = $cox->getRepository("BackBundle:Article")->findOneById($id);
-        
+
         if (!$article) {
-        throw $this->createNotFoundException('No article found for id '.$id);
-    }
-        
-        
+            throw $this->createNotFoundException('No article found for id ' . $id);
+        }
+
+
         $cox->remove($article);
         $cox->flush();
         return $this->redirect($this->generateUrl("admin Articles_new"));
-        
-     
     }
+
     /**
      * Creates a form to delete a article entity.
      *
@@ -149,30 +136,25 @@ class ArticleController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Article $article)
-    {
+    private function createDeleteForm(Article $article) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin Articles_delete', array('id' => $article->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
+                        ->setAction($this->generateUrl('admin Articles_delete', array('id' => $article->getId())))
+                        ->setMethod('DELETE')
+                        ->getForm()
         ;
     }
-    
-             public function rechercheAction(Request $request)
-            {
+
+    public function rechercheAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
-        $articles=$em->getRepository("BackBundle:Article")->findAll();// afficher tous les modeles
-         if($request->isMethod('POST'));{
-          $titre=$request->get('titre');
-          $articles=$em->getRepository("BackBundle:Article")->findArticlesBytitre($titre);// afficher par titre
-        
-           
-       
-       } 
-       return $this->render('BackBundle:Default:rechercheArticle.html.twig', array(
-                    'articles'=>$articles,
+        $articles = $em->getRepository("BackBundle:Article")->findAll(); // afficher tous les modeles
+        if ($request->isMethod('POST'))
+            ; {
+            $titre = $request->get('titre');
+            $articles = $em->getRepository("BackBundle:Article")->findArticlesBytitre($titre); // afficher par titre
+        }
+        return $this->render('BackBundle:Default:rechercheArticle.html.twig', array(
+                    'articles' => $articles,
         ));
-       
-       
-}
+    }
+
 }
