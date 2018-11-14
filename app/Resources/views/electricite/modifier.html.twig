@@ -1,0 +1,55 @@
+{% extends "BackBundle::base.html.twig" %}
+
+{% block A %}
+    <div class="row">
+
+       <div class="col-md-3">
+            <p class="lead">Listes Des Electricites</p>
+            <div class="list-group">
+                <a href="{{path('adminElectricite_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('admin Electricite_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('adminElectricite_index')}}" class="list-group-item">Afficher</a>
+                <a href="{{path('admin Electricite_recherche')}}" class="list-group-item">Recherche</a>
+            
+
+            </div>
+        </div>
+                
+        <div class="col-md-9">
+            <table class ="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Titre</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for electricite in electricites %}
+                        <tr>
+
+
+                            <td><a href="{{ path('adminElectricite_show', { 'id': electricite.id }) }}">{{ electricite.id }}</a></td>
+                            <td>{{ electricite.titre }}</td>
+                            <td>{{ electricite.description }}</td>
+
+
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('adminElectricite_edit', { 'id': electricite.id})}}" class="btn btn-info" ><span class="glyphicon glyphicon-edit"></span> modifier</a>
+                                    </li>
+                               
+                                    
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>    
+    </div>
+{% endblock A %}  

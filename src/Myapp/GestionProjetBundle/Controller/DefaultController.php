@@ -20,4 +20,14 @@ class DefaultController extends Controller
     {
         return $this->render('GestionProjetBundle:templates:about.html.twig');
     }
+    
+         public function batimentAction()
+    {
+        return $this->render('GestionProjetBundle:templates:batiment.html.twig');
+    }
+    
+          public function electriciteAction()
+    {
+        return $this->render('GestionProjetBundle:templates:electricite.html.twig');
+    }
 }

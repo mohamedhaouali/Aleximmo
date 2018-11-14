@@ -1,0 +1,56 @@
+{% extends "BackBundle::base.html.twig" %}
+
+{% block A %}
+    <div class="row">
+
+    <div class="col-md-3">
+            <p class="lead">Listes Des Batiments</p>
+            <div class="list-group">
+                <a href="{{path('adminBatiment_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('adminBatiment_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('adminBatiment_index')}}" class="list-group-item">Afficher</a>
+                <a href="{{path('adminBatiment_recherche')}}" class="list-group-item">Recherche</a>
+               
+
+            </div>
+        </div>     
+
+        <div class="col-md-9">
+            <table class ="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Titre</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for batiment in batiments %}
+                    
+                        <tr>
+
+
+                            <td><a href="{{ path('adminBatiment_show', { 'id': batiment.id }) }}">{{ batiment.id }}</a></td>
+                            <td>{{ batiment.titre }}</td>
+                            <td>{{ batiment.description }}</td>
+
+
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('adminBatiment_edit', { 'id': batiment.id})}}" class="btn btn-info" ><span class="glyphicon glyphicon-edit"></span> modifier</a>
+                                    </li>
+                               
+                                    
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>    
+    </div>
+{% endblock A %}  

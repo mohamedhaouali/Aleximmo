@@ -1,0 +1,32 @@
+adminElectricite_index:
+    path:     /
+    defaults: { _controller: "BackBundle:Electricite:index" }
+    methods:  GET
+
+adminElectricite_show:
+    path:     /{id}/show
+    defaults: { _controller: "BackBundle:Electricite:show" }
+    methods:  GET
+
+adminElectricite_new:
+    path:     /new
+    defaults: { _controller: "BackBundle:Electricite:new" }
+    methods:  [GET, POST]
+
+adminElectricite_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BackBundle:Electricite:edit" }
+    methods:  [GET, POST]
+
+adminElectricite_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BackBundle:Electricite:delete" }
+    methods:  DELETE
+
+admin Electricite_modifier:
+    path:     /modifier
+    defaults: { _controller: "BackBundle:Electricite:modifier" }
+
+admin Electricite_recherche:
+    path:     /recherche
+    defaults: { _controller: "BackBundle:Electricite:recherche" }

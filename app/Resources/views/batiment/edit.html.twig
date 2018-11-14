@@ -1,0 +1,46 @@
+{% extends "BackBundle::base.html.twig" %}
+
+{% block A %}
+
+    <div class="row">
+
+         <div class="col-md-3">
+            <p class="lead">Listes Des Batiments</p>
+            <div class="list-group">
+                <a href="{{path('adminBatiment_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('adminBatiment_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('adminBatiment_index')}}" class="list-group-item">Afficher</a>
+                <a href="{{path('adminBatiment_recherche')}}" class="list-group-item">Recherche</a>
+               
+
+            </div>
+        </div>    
+
+        <div class="col-md-9">
+
+       
+
+
+            <h1>Batiment edit</h1>
+
+            {{ form_start(edit_form) }}
+            {{ form_widget(edit_form) }}
+            <input type="submit" class="btn btn-info" value="Modifier" />
+            {{ form_end(edit_form) }}
+
+            <ul>
+                <li>
+                    <a href="{{ path('adminBatiment_index') }}">Back to the list</a>
+                </li>
+                <li>
+                    {{ form_start(delete_form) }}
+                    <input type="submit" class="btn btn-danger" value="Supprimer">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        </div>    
+    </div>
+{% endblock A %} 
+
+
+

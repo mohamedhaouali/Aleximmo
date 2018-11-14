@@ -29,4 +29,6 @@ admin Articles_modifier:
     
 admin Articles_recherche:
     path:     /recherche
-    defaults: { _controller: "BackBundle:Article:recherche" }      
+    defaults: { _controller: "BackBundle:Article:recherche" }   
+    
+    

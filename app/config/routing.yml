@@ -14,3 +14,13 @@ article:
 reference:
     resource: "@BackBundle/Resources/config/routing/reference.yml"
     prefix:   /admin/reference  
+    
+electricite:
+    resource: "@BackBundle/Resources/config/routing/electricite.yml"
+    prefix:   /admin/electricite 
+    
+batiment:
+    resource: "@BackBundle/Resources/config/routing/batiment.yml"
+    prefix:   /admin/batiment
+    
+    

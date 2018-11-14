@@ -8,4 +8,12 @@ acceuil:
     
 about:
     path:     /about
-    defaults: { _controller: GestionProjetBundle:Default:about}    
+    defaults: { _controller: GestionProjetBundle:Default:about} 
+    
+batiment:
+    path:     /batiment
+    defaults: { _controller: GestionProjetBundle:Default:batiment}   
+    
+electricite:
+    path:     /electricite
+    defaults: { _controller: GestionProjetBundle:Default:electricite}     

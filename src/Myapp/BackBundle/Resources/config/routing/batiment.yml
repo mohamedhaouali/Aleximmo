@@ -1,0 +1,32 @@
+adminBatiment_index:
+    path:     /
+    defaults: { _controller: "BackBundle:Batiment:index" }
+    methods:  GET
+
+adminBatiment_show:
+    path:     /{id}/show
+    defaults: { _controller: "BackBundle:Batiment:show" }
+    methods:  GET
+
+adminBatiment_new:
+    path:     /new
+    defaults: { _controller: "BackBundle:Batiment:new" }
+    methods:  [GET, POST]
+
+adminBatiment_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BackBundle:Batiment:edit" }
+    methods:  [GET, POST]
+
+adminBatiment_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BackBundle:Batiment:delete" }
+    methods:  DELETE
+    
+adminBatiment_modifier:
+    path:     /modifier
+    defaults: { _controller: "BackBundle:Batiment:modifier" }
+    
+adminBatiment_recherche:
+    path:     /recherche
+    defaults: { _controller: "BackBundle:Batiment:recherche" }        

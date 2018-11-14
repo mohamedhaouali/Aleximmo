@@ -72,11 +72,25 @@
                                         </ul>  <!-- end of /.dropdown-menu -->
                                     </li> <!-- end of /.dropdown -->
 
-                                    <li>
-                                        <a href={{path('admin Articles_index')}}><span>Nos travaux</span></a>
-                                    </li>
+                                          <li class="dropdown">
+                                        <a href="{{path('admin Articles_index')}}" class="dropdown-toggle" data-toggle="dropdown"><span>Nos travaux</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{path('admin Articles_index')}}">travaux de domaine sportif</a>
+                                            </li>
 
-                                        <li><a href="{{path('admin Reference_index')}}">Nos References</a></li> 
+                                            <li>
+                                                <a href="{{path('batiment')}}">Travaux de batiment </a>
+                                            </li>
+                                            
+                                               <li>
+                                                <a href="{{path('electricite')}}">Travaux d'electricite </a>
+                                            </li>
+
+                                        </ul>  <!-- end of /.dropdown-menu -->
+                                    </li> <!-- end of /.dropdown -->
+
+                                       
                                 </ul>
                             </div><!-- nav links -->
 
@@ -158,8 +172,10 @@
 
                                         <li><a href="{{path('acceuil')}}">Acceuil</a></li>
                                         <li><a href="{{path('about')}}">A propos</a></li>
-                                        <li><a href="{{path('admin Articles_index')}}">Nos travaux</a></li>
-                                        <li><a href="{{path('admin Reference_index')}}">Nos References</a></li> 
+                                        <li><a href="{{path('admin Articles_index')}}">Travaux de domaine sportif</a></li> 
+                                        <li><a href="{{path('batiment')}}">Travaux de Batiment </a></li> 
+                                        <li><a href="{{path('electricite')}}">Travaux d'Electricite</a></li> 
+                                        
                                     </div>
 
 
